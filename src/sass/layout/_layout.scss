@@ -1,0 +1,23 @@
+@use "../util" as u;
+
+.navbar {
+    background-color: u.$primary-color;
+    padding: 12px;
+    @include u.flex-center;
+
+    &__link {
+        color: white;
+        font-size: 1.2rem;
+        text-decoration: none;
+        padding: 8px;
+
+        &--home {
+            font-weight: bold;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+

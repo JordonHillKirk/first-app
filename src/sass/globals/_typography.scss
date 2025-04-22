@@ -1,0 +1,9 @@
+@use "../util" as u;
+
+h1 {
+    font-weight: u.$heading-font-weight;
+}
+
+p {
+    font-weight: u.$body-font-weight;
+}

@@ -1,0 +1,74 @@
+@use "../util" as u;
+@use 'sass:color';
+
+.card {
+    background: var(--card-color);
+    padding: 16px;
+    border-radius: u.$border-radius;
+    @include u.box-shadow();
+    text-align: center;
+
+    &--recipe {
+        border-left: 4px solid u.$secondary-color;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        color: lighten(u.$primary-color, 20%);
+    }
+
+    &__description {
+        font-size: 1rem;
+        color: lighten(u.$light-gray, 40%)
+    }
+
+    &__button {
+        background: u.$secondary-color;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        margin: 8px 0;
+        cursor: pointer;
+        border-radius: u.$border-radius;
+        transition: background 0.3s;
+
+        &--toggle {
+            background: darken(u.$secondary-color, 10%);
+        }
+
+        &:hover {
+            background: lighten(u.$secondary-color, 10%);
+        }
+    }
+
+    &__link {
+        display: block;
+        color: lighten(u.$primary-color, 20%);
+        text-decoration: underline;
+        margin-top: 8px;
+
+        &:hover {
+            color: color.adjust(u.$primary-color, $lightness: 10%)
+        }
+    } 
+}
+
+.dark-mode .card {
+    background: var(--card-color);
+
+    &__title {
+        color: u.$primary-color;
+    }
+
+    &__description {
+        color: color.adjust(u.$light-gray, $lightness: -70%)
+    }
+
+    &__link {
+        color: u.$primary-color;
+
+        &:hover {
+            color: darken(green, 10%)
+        }
+    } 
+}
